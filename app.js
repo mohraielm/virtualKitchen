@@ -23,5 +23,148 @@ function showRecipe(category, item) {
       maple: '<img src="images/emoji.png" alt="Maple"><p>230 Calories</p>',
     }
   };
+  const bread_recommendations = {
+    bread: {
+      avocado:{
+        drink: {
+          recommended: 'Coffee',
+          calories: 100,
+        },
+        donut: {
+          recommended: 'Strawberry Donut',
+          calories: 180,
+        }
+      },
+      tuna:{
+        drink: {
+          recommended: 'Tea',
+          calories: 120,
+        },
+        donut: {
+          recommended: 'Vanilla Donut',
+          calories: 160,
+        }
+      },
+      blt:{
+        drink: {
+          recommended: 'Vanilla',
+          calories: 220,
+        },
+        donut: {
+          recommended: 'Maple Donut',
+          calories: 230,
+        }
+      },
+      strawberry:{        
+        drink: {
+          recommended: 'Maple',
+          calories: 230,
+        },
+        donut: {
+          recommended: 'Strawberry Donut',
+          calories: 180,
+        }
+      }
+    }
+  }
+  const drink_recommendations = {
+    coffee: {
+      bread: {
+        recommended: 'Avocado Toast',
+        calories: 179,
+      },
+      donut: {
+        recommended: 'Strawberry Donut',
+        calories: 180,
+      }
+    },
+    tea: {
+      bread: {
+        recommended: 'Tuna Sandwich',
+        calories: 250,
+      },
+      donut: {
+        recommended: 'Vanilla Donut',
+        calories: 160,
+      }
+    },
+    vanilla: {
+      bread: {
+        recommended: 'BLT Sandwich',
+        calories: 320,
+      },
+      donut: {
+        recommended: 'Maple Donut',
+        calories: 230,
+      }
+    },
+    maple: {
+      bread: {
+        recommended: 'Strawberry Toast',
+        calories: 150,
+      },
+      donut: {
+        recommended: 'Strawberry Donut',
+        calories: 180,
+      }
+    }
+  }
+  const donut_recommendations = {
+    chocolate: {
+      bread: {
+        recommended: 'Avocado Toast',
+        calories: 179,
+      }, 
+      drink: {
+        recommended: 'Coffee',
+        calories: 100,
+      }
+    }, 
+    strawberry: {
+      bread: {
+        recommended: 'Tuna Sandwich',
+        calories: 250,
+      },
+      drink: {
+        recommended: 'Tea',
+        calories: 120,
+      }
+    },
+    vanilla: {
+      bread: {
+        recommended: 'BLT Sandwich',
+        calories: 320,
+      }, 
+      drink: {
+        recommended: 'Vanilla',
+        calories: 220,
+      }
+    },
+    maple: {
+      bread: {
+        recommended: 'Strawberry Toast',
+        calories: 150,
+      },
+      drink: {
+        recommended: 'Maple',
+        calories: 230,
+      }
+    }
+  }
+  // display recipe details 
   document.getElementById('recipeDetails').innerHTML = details[category][item] || '';
+  // display recipe recommendations
+  if (category === 'bread') {
+    document.getElementById('recipeRecommendations').innerHTML = 
+      `<p>Recommended Donut: ${bread_recommendations[category][item]['donut']['recommended']}</p>
+       <p>Recommended Drink: ${bread_recommendations[category][item]['drink']['recommended']}</p>`;
+  } else if (category === 'donut') {
+    document.getElementById('recipeRecommendations').innerHTML = 
+      `<p>Recommended Bread: ${donut_recommendations[item]['bread']['recommended']}</p>
+       <p>Recommended Drink: ${donut_recommendations[item]['drink']['recommended']}</p>`;
+  } else if (category === 'drinks') {
+    document.getElementById('recipeRecommendations').innerHTML = 
+      `<p>Recommended Bread: ${drink_recommendations[item]['bread']['recommended']}</p>
+       <p>Recommended Donut: ${drink_recommendations[item]['donut']['recommended']}</p>`;
+  }
 }
