@@ -155,20 +155,87 @@ function showRecipe(category, item) {
       }
     }
   }
+  
+function getPairingReason(category, item, type) {
+  const reasons = {
+    bread: {
+      avocado: {
+        donut: "The rich chocolate donut complements the creamy avocado toast",
+        drink: "Coffee's bold flavor balances the creamy avocado"
+      },
+      tuna: {
+        donut: "The maple donut adds sweetness to the savory tuna sandwich",
+        drink: "Tea's subtle flavor pairs well with the tuna's richness"
+      },
+      blt: {
+        donut: "Vanilla donut provides a sweet contrast to the savory BLT",
+        drink: "Vanilla drink enhances the smoky bacon flavors"
+      },
+      strawberry: {
+        donut: "Strawberry donut matches the fruity toast flavor",
+        drink: "Maple drink adds a warm sweetness to the strawberry toast"
+      }
+    },
+    donut: {
+      chocolate: {
+        bread: "Avocado toast's creaminess balances the rich chocolate",
+        drink: "Coffee's boldness complements the chocolate donut"
+      },
+      strawberry: {
+        bread: "Strawberry donut pairs perfectly with strawberry toast",
+        drink: "Maple drink adds a warm sweetness to the strawberry donut"
+      },
+      vanilla: {
+        bread: "Vanilla donut provides a sweet contrast to the savory BLT",
+        drink: "Vanilla drink enhances the donut's sweet flavor"
+      },
+      maple: {
+        bread: "Maple donut adds sweetness to the savory tuna sandwich",
+        drink: "Tea's subtle flavor balances the maple sweetness"
+      }
+    },
+    drinks: {
+      coffee: {
+        bread: "Coffee's bold flavor balances the creamy avocado toast",
+        donut: "Coffee's boldness complements the chocolate donut"
+      },
+      tea: {
+        bread: "Tea's subtle flavor pairs well with the tuna's richness",
+        donut: "Tea's subtle flavor balances the maple sweetness"
+      },
+      vanilla: {
+        bread: "Vanilla drink enhances the smoky bacon flavors",
+        donut: "Vanilla drink enhances the donut's sweet flavor"
+      },
+      maple: {
+        bread: "Maple drink adds a warm sweetness to the strawberry toast",
+        donut: "Maple drink adds a warm sweetness to the strawberry donut"
+      }
+    }
+  };
+  return reasons[category][item][type];
+}
+
   // display recipe details 
   document.getElementById('recipeDetails').innerHTML = details[category][item] || '';
   // display recipe recommendations
   if (category === 'bread') {
     document.getElementById('recipeRecommendations').innerHTML = 
       `<p>Recommended Donut: ${bread_recommendations[category][item]['donut']['recommended']}</p>
-       <p>Recommended Drink: ${bread_recommendations[category][item]['drink']['recommended']}</p>`;
+       <p class="reason">${getPairingReason(category, item, 'donut')}</p>
+       <p>Recommended Drink: ${bread_recommendations[category][item]['drink']['recommended']}</p>
+       <p class="reason">${getPairingReason(category, item, 'drink')}</p>`;
   } else if (category === 'donut') {
     document.getElementById('recipeRecommendations').innerHTML = 
       `<p>Recommended Bread: ${donut_recommendations[category][item]['bread']['recommended']}</p>
-       <p>Recommended Drink: ${donut_recommendations[category][item]['drink']['recommended']}</p>`;
+       <p class="reason">${getPairingReason(category, item, 'bread')}</p>
+       <p>Recommended Drink: ${donut_recommendations[category][item]['drink']['recommended']}</p>
+       <p class="reason">${getPairingReason(category, item, 'drink')}</p>`;
   } else if (category === 'drinks') {
     document.getElementById('recipeRecommendations').innerHTML = 
       `<p>Recommended Bread: ${drink_recommendations[category][item]['bread']['recommended']}</p>
-       <p>Recommended Donut: ${drink_recommendations[category][item]['donut']['recommended']}</p>`;
+       <p class="reason">${getPairingReason(category, item, 'bread')}</p>
+       <p>Recommended Donut: ${drink_recommendations[category][item]['donut']['recommended']}</p>
+       <p class="reason">${getPairingReason(category, item, 'donut')}</p>`;
   }
 }
