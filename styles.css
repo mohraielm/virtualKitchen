@@ -26,7 +26,7 @@
     width: 318px;
     height: 166px;
     position: absolute;
-    left: 596px;
+    left: 650px;
     top: 383px;
     object-fit: cover;
     aspect-ratio: 318/166;
@@ -38,7 +38,6 @@
     position: absolute;
     left: 381px;
     top: 347px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     object-fit: cover;
     aspect-ratio: 1;
 }
@@ -47,7 +46,7 @@
     width: 203px;
     height: 203px;
     position: absolute;
-    left: 901px;
+    left: 975px;
     top: 346px;
     object-fit: cover;
     aspect-ratio: 1;
