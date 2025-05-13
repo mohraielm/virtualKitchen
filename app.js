@@ -27,19 +27,19 @@ function showRecipeModal(category) {
         sidebarName = 'Bread';
         recipeList = `
             <li class="recipe-item" onclick="showRecipe('bread', 'avocado')">
-                <img src="images/emoji.png" alt="Avocado Toast" class="recipe-image">
+                <img src="images/avocado.png" alt="Avocado Toast" class="recipe-image">
                 <p>Avocado Toast</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('bread', 'tuna')">
-                <img src="images/emoji.png" alt="Tuna Sandwich" class="recipe-image">
+                <img src="images/tuna.png" alt="Tuna Sandwich" class="recipe-image">
                 <p>Tuna Sandwich</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('bread', 'blt')">
-                <img src="images/emoji.png" alt="BLT Sandwich" class="recipe-image">
+                <img src="images/blt.png" alt="BLT Sandwich" class="recipe-image">
                 <p>BLT Sandwich</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('bread', 'strawberry')">
-                <img src="images/emoji.png" alt="Strawberry Toast" class="recipe-image">
+                <img src="images/strawberry-jam.png" alt="Strawberry Toast" class="recipe-image">
                 <p>Strawberry Toast</p>
             </li>`;
     } else if (category === 'donut') {
