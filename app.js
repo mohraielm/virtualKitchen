@@ -96,7 +96,9 @@ function showRecipeModal(category) {
         </main>
         <div class="recipe-container">
           <div class="recipe-details" id="modalRecipeDetails"></div>
-          <div class="recipe-recommendations" id="modalRecipeRecommendations"></div>
+          <div class="recipe-recommendations" id="modalRecipeRecommendations">
+            <p>Please select a ${sidebarName} option from the list on the left to see details and recommendations.</p>
+          </div>
         </div>
       </div>
     `;
@@ -195,6 +197,7 @@ function showRecipe(category, item) {
       }
     }
   }
+
   const drink_recommendations = {
     drinks: {
       'Coffee': {
@@ -239,6 +242,7 @@ function showRecipe(category, item) {
       }
     }
   }
+
   const donut_recommendations = {
     donut: {
       'Chocolate Donut': {
