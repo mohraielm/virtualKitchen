@@ -345,22 +345,22 @@ function getPairingReason(category, item, type) {
 }
 
   // display recipe details 
-  document.getElementById('recipeDetails').innerHTML = details[category][item] || '';
+  document.getElementById('modalrecipeDetails').innerHTML = details[category][item] || '';
   // display recipe recommendations
   if (category === 'bread') {
-    document.getElementById('recipeRecommendations').innerHTML = 
+    document.getElementById('modalrecipeRecommendations').innerHTML = 
       `<p>Recommended Donut: <a href="donut_recipes.html?item=${bread_recommendations[category][item]['donut']['recommended']}" onclick="showRecipe('donut', '${bread_recommendations[category][item]['donut']['recommended']}')">${bread_recommendations[category][item]['donut']['recommended']}</a></p>
        <p class="reason">${getPairingReason(category, item, 'donut')}</p>
        <p>Recommended Drink: <a href="drinks_recipes.html?item=${bread_recommendations[category][item]['drink']['recommended']}" onclick="showRecipe('drinks', '${bread_recommendations[category][item]['drink']['recommended']}')">${bread_recommendations[category][item]['drink']['recommended']}</a></p>
        <p class="reason">${getPairingReason(category, item, 'drink')}</p>`;
   } else if (category === 'donut') {
-    document.getElementById('recipeRecommendations').innerHTML = 
+    document.getElementById('modalrecipeRecommendations').innerHTML = 
       `<p>Recommended Bread: <a href="bread_recipes.html?item=${donut_recommendations[category][item]['bread']['recommended']}" onclick="showRecipe('bread', '${donut_recommendations[category][item]['bread']['recommended']}')">${donut_recommendations[category][item]['bread']['recommended']}</a></p>
        <p class="reason">${getPairingReason(category, item, 'bread')}</p>
        <p>Recommended Drink: <a href="drinks_recipes.html?item=${donut_recommendations[category][item]['drink']['recommended']}" onclick="showRecipe('drinks', '${donut_recommendations[category][item]['drink']['recommended']}')">${donut_recommendations[category][item]['drink']['recommended']}</a></p>
        <p class="reason">${getPairingReason(category, item, 'drink')}</p>`;
   } else if (category === 'drinks') {
-    document.getElementById('recipeRecommendations').innerHTML = 
+    document.getElementById('modalrecipeRecommendations').innerHTML = 
       `<p>Recommended Bread: <a href="bread_recipes.html?item=${drink_recommendations[category][item]['bread']['recommended']}" onclick="showRecipe('bread', '${drink_recommendations[category][item]['bread']['recommended']}')">${drink_recommendations[category][item]['bread']['recommended']}</a></p>
        <p class="reason">${getPairingReason(category, item, 'bread')}</p>
        <p>Recommended Donut: <a href="donut_recipes.html?item=${drink_recommendations[category][item]['donut']['recommended']}" onclick="showRecipe('donut', '${drink_recommendations[category][item]['donut']['recommended']}')">${drink_recommendations[category][item]['donut']['recommended']}</a></p>
