@@ -47,19 +47,19 @@ function showRecipeModal(category) {
         sidebarName = 'Donut';
         recipeList = `
             <li class="recipe-item" onclick="showRecipe('donut', 'chocolate')">
-                <img src="images/emoji.png" alt="Chocolate Donut" class="recipe-image">
+                <img src="images/chocolate_donut.png" alt="Chocolate Donut" class="recipe-image">
                 <p>Chocolate Donut</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('donut', 'strawberry')">
-                <img src="images/emoji.png" alt="Strawberry Donut" class="recipe-image">
+                <img src="images/strawberry_donut.png" alt="Strawberry Donut" class="recipe-image">
                 <p>Strawberry Donut</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('donut', 'vanilla')">
-                <img src="images/emoji.png" alt="Vanilla Donut" class="recipe-image">
+                <img src="images/vanilla_donut.png" alt="Vanilla Donut" class="recipe-image">
                 <p>Vanilla Donut</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('donut', 'maple')">
-                <img src="images/emoji.png" alt="Maple Donut" class="recipe-image">
+                <img src="images/maple_donut.png" alt="Maple Donut" class="recipe-image">
                 <p>Maple Donut</p>
             </li>`;
     } else if (category === 'drinks') {
@@ -138,10 +138,10 @@ function showRecipe(category, item) {
       strawberry: { img: 'images/emoji.png', name: 'Strawberry Toast', calories: 150 },
     },
     donut: {
-      chocolate: { img: 'images/emoji.png', name: 'Chocolate Donut', calories: 200 },
-      strawberry: { img: 'images/emoji.png', name: 'Strawberry Donut', calories: 180 },
-      vanilla: { img: 'images/emoji.png', name: 'Vanilla Donut', calories: 160 },
-      maple: { img: 'images/emoji.png', name: 'Maple Donut', calories: 210 },
+      chocolate: { img: 'images/chocolate_donut.png', name: 'Chocolate Donut', calories: 200 },
+      strawberry: { img: 'images/strawberry_donut.png', name: 'Strawberry Donut', calories: 180 },
+      vanilla: { img: 'images/vanilla_donut.png', name: 'Vanilla Donut', calories: 160 },
+      maple: { img: 'images/maple_donut.png', name: 'Maple Donut', calories: 210 },
     },
     drinks: {
       coffee: { img: 'images/coffee.png', name: 'Coffee', calories: 100 },
