@@ -1,5 +1,28 @@
 console.log('CS4080 Virtual Kitchen');
 
+// Enlarge image when hovered over
+function enlargeImage(imgElement, scaleFactor) {
+  const originalWidth = imgElement.width;
+  const originalHeight = imgElement.height;
+
+  imgElement.addEventListener('mouseover', function() {
+    imgElement.style.width = `${originalWidth * scaleFactor}px`;
+    imgElement.style.height = `${originalHeight * scaleFactor}px`;
+  });
+
+  imgElement.addEventListener('mouseout', function() {
+    imgElement.style.width = `${originalWidth}px`;
+    imgElement.style.height = `${originalHeight}px`;
+  });
+}
+
+const bread_home = document.getElementById('bread-home');
+const donut_home = document.getElementById('donut-home');
+const cup_home = document.getElementById('cup-home');
+enlargeImage(bread_home, 1.05);
+enlargeImage(donut_home, 1.05);
+enlargeImage(cup_home, 1.05);
+
 // Get modal elements
 const modal = document.getElementById('recipeModal');
 const modalContent = document.getElementById('modalContent');
@@ -134,10 +157,10 @@ window.onload = function() {
 function showRecipe(category, item) {
   const details = {
     bread: {
-      avocado: { img: 'images/emoji.png', name: 'Avocado Toast', calories: 179 },
-      tuna: { img: 'images/emoji.png', name: 'Tuna Sandwich', calories: 250 },
-      blt: { img: 'images/emoji.png', name: 'BLT Sandwich', calories: 320 },
-      strawberry: { img: 'images/emoji.png', name: 'Strawberry Toast', calories: 150 },
+      avocado: { img: 'images/avocado.png', name: 'Avocado Toast', calories: 179 },
+      tuna: { img: 'images/tuna.png', name: 'Tuna Sandwich', calories: 250 },
+      blt: { img: 'images/blt.png', name: 'BLT Sandwich', calories: 320 },
+      strawberry: { img: 'images/strawberry-jam.png', name: 'Strawberry Toast', calories: 150 },
     },
     donut: {
       chocolate: { img: 'images/chocolate_donut.png', name: 'Chocolate Donut', calories: 200 },

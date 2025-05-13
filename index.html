@@ -12,10 +12,12 @@
 </head>
 <body style="background-color: #6e4838;">
     <div class="birthstone-bounce-medium">Virtual Kitchen</div>
-    <img class="table" src="images/Table.png"/>
-    <img class="bread" src="images/Bread.png" onclick="showRecipeModal('bread')"/>
-    <img class="donut" src="images/Donut.png" onclick="showRecipeModal('donut')"/>   
-    <img class="cup" src="images/Cup.png" onclick="showRecipeModal('drinks')"/> 
+    <div >
+        <img class="table" src="images/Table.png"/>
+        <img id="bread-home" class="bread" src="images/Bread.png" onclick="showRecipeModal('bread')"/>
+        <img id="donut-home" class="donut" src="images/Donut.png" onclick="showRecipeModal('donut')"/>   
+        <img id="cup-home" class="cup" src="images/Cup.png" onclick="showRecipeModal('drinks')"/>
+    </div> 
 
     <!-- Modal Container -->
     <div id="recipeModal" class="modal">
