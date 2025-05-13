@@ -207,6 +207,17 @@ body::-webkit-scrollbar {
     margin-bottom: 20px;
 }
 
+.recipe-recommendations p {
+    margin: 5px 0;
+}
+
+.recipe-recommendations .reason {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
 /* Modal Styles */
 .modal {
     display: none;
