@@ -63,7 +63,7 @@ function showRecipeModal(category) {
                 <p>Maple Donut</p>
             </li>`;
     } else if (category === 'drinks') {
-        sidebarImg = '<img src="images/Cup.png" alt="Drink" class="recipe-image cup">';
+        sidebarImg = '<img src="images/Cup.png" alt="Drink" class="recipe-image cup" style="width: 150px; height: auto;">';
         sidebarName = 'Drink';
         recipeList = `
             <li class="recipe-item" onclick="showRecipe('drinks', 'coffee')">
