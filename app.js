@@ -344,26 +344,48 @@ function getPairingReason(category, item, type) {
   return reasons[category][item][type];
 }
 
-  // display recipe details 
-  document.getElementById('modalrecipeDetails').innerHTML = details[category][item] || '';
-  // display recipe recommendations
-  if (category === 'bread') {
-    document.getElementById('modalrecipeRecommendations').innerHTML = 
-      `<p>Recommended Donut: <a href="donut_recipes.html?item=${bread_recommendations[category][item]['donut']['recommended']}" onclick="showRecipe('donut', '${bread_recommendations[category][item]['donut']['recommended']}')">${bread_recommendations[category][item]['donut']['recommended']}</a></p>
-       <p class="reason">${getPairingReason(category, item, 'donut')}</p>
-       <p>Recommended Drink: <a href="drinks_recipes.html?item=${bread_recommendations[category][item]['drink']['recommended']}" onclick="showRecipe('drinks', '${bread_recommendations[category][item]['drink']['recommended']}')">${bread_recommendations[category][item]['drink']['recommended']}</a></p>
-       <p class="reason">${getPairingReason(category, item, 'drink')}</p>`;
-  } else if (category === 'donut') {
-    document.getElementById('modalrecipeRecommendations').innerHTML = 
-      `<p>Recommended Bread: <a href="bread_recipes.html?item=${donut_recommendations[category][item]['bread']['recommended']}" onclick="showRecipe('bread', '${donut_recommendations[category][item]['bread']['recommended']}')">${donut_recommendations[category][item]['bread']['recommended']}</a></p>
-       <p class="reason">${getPairingReason(category, item, 'bread')}</p>
-       <p>Recommended Drink: <a href="drinks_recipes.html?item=${donut_recommendations[category][item]['drink']['recommended']}" onclick="showRecipe('drinks', '${donut_recommendations[category][item]['drink']['recommended']}')">${donut_recommendations[category][item]['drink']['recommended']}</a></p>
-       <p class="reason">${getPairingReason(category, item, 'drink')}</p>`;
-  } else if (category === 'drinks') {
-    document.getElementById('modalrecipeRecommendations').innerHTML = 
-      `<p>Recommended Bread: <a href="bread_recipes.html?item=${drink_recommendations[category][item]['bread']['recommended']}" onclick="showRecipe('bread', '${drink_recommendations[category][item]['bread']['recommended']}')">${drink_recommendations[category][item]['bread']['recommended']}</a></p>
-       <p class="reason">${getPairingReason(category, item, 'bread')}</p>
-       <p>Recommended Donut: <a href="donut_recipes.html?item=${drink_recommendations[category][item]['donut']['recommended']}" onclick="showRecipe('donut', '${drink_recommendations[category][item]['donut']['recommended']}')">${drink_recommendations[category][item]['donut']['recommended']}</a></p>
-       <p class="reason">${getPairingReason(category, item, 'donut')}</p>`;
-  }
+  const recommendationsMap = {
+    bread: {
+      obj: bread_recommendations.bread,
+      keys: [
+        { label: "Recommended Donut", key: "donut" },
+        { label: "Recommended Drink", key: "drink" }
+      ]
+    },
+    donut: {
+      obj: donut_recommendations.donut,
+      keys: [
+        { label: "Recommended Bread", key: "bread" },
+        { label: "Recommended Drink", key: "drink" }
+      ]
+    },
+    drinks: {
+      obj: drink_recommendations.drinks,
+      keys: [
+        { label: "Recommended Bread", key: "bread" },
+        { label: "Recommended Donut", key: "donut" }
+      ]
+    }
+  };
+
+  const food = details[category][item];
+  document.getElementById('modalRecipeDetails').innerHTML = `
+    <img src="${food.img}" alt="${food.name}" class="recipe-image">
+    <p style="font-size: 2rem; font-weight: bold; margin: 20px 0 10px 0;">${food.name}</p>
+    <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 30px;">${food.calories} Calories</p>
+  `;
+
+  // dynamically build recommendations
+  const recObj = recommendationsMap[category].obj[food.name];
+  const recKeys = recommendationsMap[category].keys;
+  let recommendationsHTML = recKeys.map(rec => {
+    const recommended = recObj[rec.key].recommended;
+    const reason = getPairingReason(category, food.name, rec.key);
+    return `
+      <p><b>${rec.label}:</b> ${recommended}</p>
+      <p class="reason">${reason}</p>
+    `;
+  }).join('');
+
+  document.getElementById('modalRecipeRecommendations').innerHTML = recommendationsHTML;
 }
