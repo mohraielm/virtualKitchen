@@ -168,7 +168,7 @@ body::-webkit-scrollbar {
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: 75vh;
+    width: 100vh;
     padding: 2rem;
 }
 
