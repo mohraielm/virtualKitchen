@@ -67,19 +67,19 @@ function showRecipeModal(category) {
         sidebarName = 'Drink';
         recipeList = `
             <li class="recipe-item" onclick="showRecipe('drinks', 'coffee')">
-                <img src="images/emoji.png" alt="Coffee" class="recipe-image">
+                <img src="images/coffee.png" alt="Coffee" class="recipe-image">
                 <p>Coffee</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('drinks', 'tea')">
-                <img src="images/emoji.png" alt="Tea" class="recipe-image">
+                <img src="images/tea.png" alt="Tea" class="recipe-image">
                 <p>Tea</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('drinks', 'vanilla')">
-                <img src="images/emoji.png" alt="Vanilla" class="recipe-image">
+                <img src="images/vanilla.png" alt="Vanilla" class="recipe-image">
                 <p>Vanilla</p>
             </li>
             <li class="recipe-item" onclick="showRecipe('drinks', 'maple')">
-                <img src="images/emoji.png" alt="Maple" class="recipe-image">
+                <img src="images/maple.png" alt="Maple" class="recipe-image">
                 <p>Maple</p>
             </li>`;
     }
@@ -144,10 +144,10 @@ function showRecipe(category, item) {
       maple: { img: 'images/emoji.png', name: 'Maple Donut', calories: 210 },
     },
     drinks: {
-      coffee: { img: 'images/emoji.png', name: 'Coffee', calories: 100 },
-      tea: { img: 'images/emoji.png', name: 'Tea', calories: 120 },
-      vanilla: { img: 'images/emoji.png', name: 'Vanilla', calories: 220 },
-      maple: { img: 'images/emoji.png', name: 'Maple', calories: 230 },
+      coffee: { img: 'images/coffee.png', name: 'Coffee', calories: 100 },
+      tea: { img: 'images/tea.png', name: 'Tea', calories: 120 },
+      vanilla: { img: 'images/vanilla.png', name: 'Vanilla', calories: 220 },
+      maple: { img: 'images/maple.png', name: 'Maple', calories: 230 },
     }
   };
 
